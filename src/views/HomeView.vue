@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="la pluie"/>
+    <HelloWorld msg="la tempête de sable"/>
   </div>
 </template>
 
