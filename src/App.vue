@@ -1,9 +1,14 @@
 <template>
+    <!-- mettre une iframe--> ->
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
+
+  <!-- mettre squelette html chatbot--> ->
   <router-view/>
+
+
 </template>
 
 <style>
