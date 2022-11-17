@@ -46,6 +46,8 @@ function chooseResponse(input) {
             return getCategories('couleurs')
         case 'taille':
             return getCategories('taille')
+        case 'nike':
+            return getProducts('nike')
     }
 }
 
@@ -73,5 +75,33 @@ function getCategories(category){
     } else{
         console.log('Aucun élément ne correspond à la recherche ' + category)
         return 'Aucun élément ne correspond à la recherche ' + category
+    }
+}
+
+/**
+ * 
+ * @param @param {string} input  message utilisateur 
+ * @param {*String} category 
+ * @param {*String} value 
+ * @returns 
+ */
+function getProducts(input, category, value){
+    let arrayOut = [];
+    if (chaussures.length > 0){
+        chaussures.forEach(element => {
+            if(element[category][value] === input){
+                arrayOut.push(element)
+            }
+        }) 
+    } else {
+        console.log('Aucune chaussure disponible')
+        return 'Aucune chaussure disponible'
+    }
+    if (arrayOut.length > 0){
+        console.log(arrayOut)
+        return arrayOut;
+    } else{
+        console.log('Aucun élément ne correspond à la recherche ' + category + ': ' + input)
+        return 'Aucun élément ne correspond à la recherche ' + category + ': ' + input
     }
 }
