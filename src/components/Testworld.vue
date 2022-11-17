@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="chat-bar-icons">
-                                <img class="chat-bar-icons" src="static/images/envoyer_shoes.png" onclick="sendButton()">
+                                <img class="chat-bar-icons" src="static/images/envoyer_shoes.png" @click=btnsend()>
                             </div>
                         </div>
 
@@ -45,10 +45,16 @@
   </template>
   
   <script>
+    import {sendButton} from '../Helper/chat.js'
   export default {
     name: 'Testworld',
     props: {
       msg: String
+    },
+    methods: {
+        btnsend: function () {
+            sendButton()
+        }
     }
   }
   </script>

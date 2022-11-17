@@ -89,7 +89,7 @@ function buttonSendText(sampleText) {
     // }, 1000)
 }
 
-function sendButton() {
+export function sendButton() {
     getResponse();
 }
 
