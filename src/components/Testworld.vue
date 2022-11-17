@@ -26,10 +26,6 @@
                             </div>
 
                             <div class="chat-bar-icons">
-                                <!-- <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
-                                    onclick="heartButton()"></i> -->
-                                <!-- <i id="chat-icon" style="color:  #0A7CFF;" class="fa fa-fw fa-send"
-                                    onclick="sendButton()"></i> -->
                                 <img class="chat-bar-icons" src="static/images/envoyer_shoes.png" onclick="sendButton()">
                             </div>
                         </div>
