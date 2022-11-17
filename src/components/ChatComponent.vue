@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { converse, getTime } from '../Helper/chatHelper';
+import { converse, getTime } from '../helpers/chatHelper';
 export default {
   name: 'Testworld',
   props: {
