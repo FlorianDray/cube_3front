@@ -1,7 +1,7 @@
 <template>
     <div class="chatbot">
       <h1>{{ msg }}</h1>
-     <!-- BLOC DE BARRES DE CHAT -->
+      BLOC DE BARRES DE CHAT
      <div class="chat-bar-collapsible">
         <button id="chat-button" type="button" class="collapsible"> <img class="chat-bar-icons-2" src="../assets/images/bot_logo.png"> <p id="bot-text">Chat avec Sneak Me !</p>
         </button>
@@ -31,7 +31,7 @@
                         <div class="chat-bar-input-block">
                             <div id="userInput">
                                 <input id="textInput" class="input-box" type="text" name="msg"
-                                    placeholder="Écrivez un message" :v-model=inputUser>
+                                    placeholder="Écrivez un message" :v-model="inputUser">
                                 <p></p>
                             </div>
 
@@ -53,7 +53,7 @@
     </div>
     </div>
   </template>
-  
+
   <script>
     import {converse, getTime } from '../Helper/chatHelper';
     export default {
@@ -61,20 +61,18 @@
         props: {
             msg: String
         },
-        data: function() {
-            return {
-                dialog : [{
-                    msg: 'Bonjour ! Que puis-je faire pour vous ?',
-                    user: 'bot',
-                    time : getTime()
-                }],
-                inputUser: String
-            }            
-        },
-        created: {
+        data() {
+          return {
+            dialog: [{
+              msg: 'Bonjour ! Que puis-je faire pour vous ?',
+              user: 'bot',
+              time: ""
+            }],
+            inputUser: ""
+          }
         },
         methods: {
-            dialogEvolve: function () {
+            dialogEvolve() {
                 this.dialog = converse(this.inputUser, this.dialog)
             }
         }
