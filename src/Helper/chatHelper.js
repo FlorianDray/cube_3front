@@ -1,48 +1,25 @@
+import chaussures from '../fakeData.js'
 
 /**
- * retourne l'heure actuelle
- * @returns string time
- */
- export function getTime() {
-    let today = new Date();
-    let hours = today.getHours();
-    let minutes = today.getMinutes();
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-
-    let time = hours + ":" + minutes;
-    return time;
-}
-
-/**
- * Reçoit le message utilisateur et remplis les listes
- * @param input string message user
- * @param msgBot array liste de messages du bot
- * @returns msgBot array 
+ * Reçoit le message utilisateur et actualise la liste dialog avec la demande et la réponse
+ * @param {string} input  message utilisateur
+ * @param {array[Object]} dialog   liste des messages
+ * @returns {array[Object]} dialog liste des messages
  */
 export function converse(input, dialog) {
     dialog.push({
         msg: input,
-        user: 'user',
-        time : getTime()
+        user: 'user'
     })
     if(input == '' || input == undefined) {
         dialog.push({
             msg: 'je n\'ai pas compris',
-            user: 'bot',
-            time : getTime()
+            user: 'bot'
         })
     } else {
         dialog.push({
             msg: chooseResponse(input),
-            user: 'bot',
-            time : getTime()
+            user: 'bot'
         })
     }
     return dialog
@@ -50,20 +27,41 @@ export function converse(input, dialog) {
 
 /**
  * Choisis une réponse adapté
- * @param input string message user 
- * @returns response string message bot
+ * @param {string} input  message utilisateur 
+ * @returns message du bot
  */
 function chooseResponse(input) {
-    return input + ' bot'
+    switch (input) {
+        case 'marque':
+            return getCategories('marque')
+        case 'type':
+            return getCategories('type')
+        case 'nom':
+            return getCategories('nom')
+        case 'couleurs':
+            return getCategories('couleurs')
+        case 'taille':
+            return getCategories('taille')
+    }
 }
-
-//ça va partir dans le composant
-function generateDialog(listesMsg) {
-    listesMsg.forEach(element => {
-        if (element.index == 0) {
-            //affichage css d'un msg bot
-        } else if (element.index == 1) {
-            //affichage css d'un msg user
+/**
+ * Retourne la liste des éléments d'une catégorie
+ * @param {string} category 
+ * @returns {array} message du bot
+ */
+function getCategories(category){
+    let arrayOut = [];
+    console.log(chaussures)
+    chaussures.array.forEach(element => {
+        if(element[category] in arrayOut ){}
+        else { 
+            arrayOut.push(element[category])
         }
     });
+    if (arrayOut.length > 0){
+        console.log()
+        return arrayOut;
+    } else{
+        return 'Ceci est une erreur'
+    }
 }

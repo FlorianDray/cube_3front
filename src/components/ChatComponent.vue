@@ -14,7 +14,7 @@
 </template>
 
   <script>
-    import {converse, getTime } from '../Helper/chatHelper';
+    import {converse} from '../Helper/chatHelper';
     export default {
         name: 'Testworld',
         props: {
@@ -23,9 +23,8 @@
         data() {
           return {
             dialog: [{
-              msg: 'Bonjour ! Que puis-je faire pour vous ?',
-              user: 'bot',
-              time: ""
+              msg: 'Bonjour ! comment souhaitez vous recherchez ? (marque/type/nom/couleur/taille)',
+              user: 'bot'
             }],
             inputUser: ""
           }
