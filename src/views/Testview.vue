@@ -6,7 +6,6 @@
   </template>
   
   <script>
-  // @ is an alias to /src
   import Testworld from '@/components/Testworld.vue'
   
   export default {

@@ -1,8 +1,7 @@
 /**
  * Reçoit le message utilisateur et remplis 
  */
-function converse(input, msgBot, msgUser) {
-    msgUser.push(input);
+function converse(input, msgBot) {
     if(input == '' || input == undefined) {
         msgBot.push('Je n\'ai pas compris')
     } else {
@@ -11,5 +10,9 @@ function converse(input, msgBot, msgUser) {
 }
 
 function chooseResponse(input) {
+    
+}
+
+export function firstMsgBot() {
     
 }
