@@ -7,16 +7,20 @@ import chaussures from '../fakeData.js'
  * @returns {array[Object]} dialog liste des messages
  */
 export function converse(input, dialog) {
-    dialog.push({
-        msg: input,
-        user: 'user'
-    })
     if(input == '' || input == undefined) {
+        dialog.push({
+            msg: input,
+            user: 'user'
+        })
         dialog.push({
             msg: 'je n\'ai pas compris',
             user: 'bot'
         })
     } else {
+        dialog.push({
+            msg: input,
+            user: 'user'
+        })
         dialog.push({
             msg: chooseResponse(input),
             user: 'bot'
@@ -38,30 +42,36 @@ function chooseResponse(input) {
             return getCategories('type')
         case 'nom':
             return getCategories('nom')
-        case 'couleurs':
+        case 'couleur':
             return getCategories('couleurs')
         case 'taille':
             return getCategories('taille')
     }
 }
+
 /**
  * Retourne la liste des éléments d'une catégorie
  * @param {string} category 
  * @returns {array} message du bot
  */
 function getCategories(category){
-    let arrayOut = [];
+    let arrayOut = []
     console.log(chaussures)
-    chaussures.array.forEach(element => {
-        if(element[category] in arrayOut ){}
-        else { 
-            arrayOut.push(element[category])
-        }
-    });
+    if (chaussures.length > 0){
+        chaussures.forEach(element => {
+            if(!arrayOut.includes(element[category])  ){
+                arrayOut.push(element[category])
+            }
+        })
+    } else {
+        console.log('Aucune chaussure disponible')
+        return 'Aucune chaussure disponible'
+    }
     if (arrayOut.length > 0){
-        console.log()
+        console.log(arrayOut)
         return arrayOut;
     } else{
-        return 'Ceci est une erreur'
+        console.log('Aucun élément ne correspond à la recherche ' + category)
+        return 'Aucun élément ne correspond à la recherche ' + category
     }
 }

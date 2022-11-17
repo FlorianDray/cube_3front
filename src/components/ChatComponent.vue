@@ -14,7 +14,7 @@
 </template>
 
   <script>
-    import {converse} from '../Helper/chatHelper';
+    import {converse} from '../helpers/chatHelper';
     export default {
         name: 'Testworld',
         props: {

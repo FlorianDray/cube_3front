@@ -1,5 +1,5 @@
 let chaussures = [];
-export default chaussures [
+export default chaussures = [
     {
         marque : 'nike',
         type : 'montante',
