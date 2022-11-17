@@ -1,7 +1,7 @@
 <template>
     <div class="chatbot">
       <h1>{{ msg }}</h1>
-      <div>
+      <div class="windows-chatbot">
             <ul>
                  <li v-for="message in dialog">
                     <p :class="message.user === 0 ? 'bot' : 'user'">{{ message.msg }}</p>
