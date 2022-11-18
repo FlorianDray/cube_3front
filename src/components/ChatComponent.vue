@@ -27,6 +27,7 @@
 </template>
 
 <script>
+// DV : getTime est importé mais pas utilisé.
 import { converse, getTime } from '../helpers/chatHelper';
 export default {
   name: 'Testworld',
@@ -40,7 +41,7 @@ export default {
         user: 'bot',
         time: ""
       }],
-      inputUser: "Coucou"
+      inputUser: ""
     }
   },
   methods: {
