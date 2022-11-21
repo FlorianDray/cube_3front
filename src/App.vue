@@ -17,15 +17,18 @@ body {
 .chatbot-box {
   position: fixed;
   display: grid;
-  bottom: 0;
-  right: 50px;
+  right: 30px;
+  bottom: 0px;
 }
+/* .chatbot-box:active {
+  animation: chatbot-window 0.5s ease-in forwards;
+} */
 
 .button-open-chatbox {
   position: absolute;
-  background-color: #0A7CFF;
+  background: linear-gradient(90deg, rgba(35,119,255,1) 0%, rgba(53,104,255,1) 49%, rgba(0,157,189,1) 100%);
   width: 350px;
-  height: 50px;
+  height: 60px;
   font-size: 18px;
   bottom: 500px;
   right: 0;
@@ -52,19 +55,17 @@ body {
   float: left;
 }
 
-.windows-chatbot {
+.window-chatbot {
   background-color: white;
   max-height: 500px;
   width: 350px;
+  height: 500px;
   position: absolute;
   display: flex;
   flex-direction: column;
   bottom: 0;
   right: 0;
   scroll-behavior: smooth;
-  hyphens: auto;
-  
-
 }
 
 .scrollbar {
@@ -72,9 +73,10 @@ body {
   scrollbar-width: none;
   height: max-content;
   transition: max-height 0.2s ease-out;
+  height: 500px;
 }
 
-.windows-chatbot ul li {
+.window-chatbot ul li {
   list-style-type: none;
   text-align: left;
   padding:0;
@@ -82,14 +84,16 @@ body {
 }
 
 .text-zone {
-  background-color: rgb(216, 216, 216);
+  background-color: #e7e7e7;
   padding: 10px;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
 }
 
-.windows-chatbot button {
+.window-chatbot button {
   width: 30%;
   height: 25px;
-  background: rgb(216, 216, 216);
+  background: #e7e7e7;
   border: 0;
 }
 
@@ -118,35 +122,61 @@ body {
   outline: none;
 }
 
-/* .userBox {
-  line-height: 1.5em;
-  display: inline-block;
-  background: #e0e0e0;
-  padding: 10px;
-  border-radius: 8px;
-  border-bottom-left-radius: 2px;
-  max-width: 75%;
-  margin-left: 10px;
-} */
-
 .user {
-  padding: 20px;
+  margin: 2px;
+  padding: 15px;
   color: white;
-  background: linear-gradient(120deg, rgba(97,33,158,1) 15%, rgba(9,9,121,1) 50%, rgba(0,138,166,1) 100%);    
+  background: linear-gradient(90deg, rgba(35,119,255,1) 0%, rgba(53,104,255,1) 49%, rgba(0,157,189,1) 100%);    
   width: 75%;
   float: right;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 10px;
   max-width: max-content;
+  animation: floatup .5s forwards
 }
 
 .bot {
-  padding: 20px;
+  margin: 2px;
+  padding: 15px;
   color: rgb(0, 0, 0);
   background: #e0e0e0;
   width: 75%;
   float: left;
   margin-left: -30px;
-  border-radius: 10px;
+  border-radius: 10px 10px 10px 0px;
+  animation: floatup .5s forwards
 }
+
+.bot #time {
+  font-size: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.user #time {
+  font-size: 10px;
+  text-align: right;
+  margin: 10px 0px 0px 0px;
+}
+
+@keyframes chatbot-window {
+  from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-500px);
+    }
+}
+
+@keyframes floatup {
+    from {
+        transform: translateY(15px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 </style>
+

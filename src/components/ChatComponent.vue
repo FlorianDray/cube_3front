@@ -9,11 +9,11 @@
         </button>
 
       </div>
-      <div class="windows-chatbot">
+      <div class="window-chatbot">
         <ul class="scrollbar">
           <li v-for="message in dialog">
             <div class="userBox">
-              <p :class="message.user == 'bot' ? 'bot' : 'user'">{{ message.msg }}</p>
+              <p :class="message.user == 'bot' ? 'bot' : 'user'">{{ message.msg }}<p id="time">12:34</p></p>
             </div>
           </li>
         </ul>
@@ -41,7 +41,7 @@ export default {
         user: 'bot',
         time: ""
       }],
-      inputUser: ""
+      inputUser: "Coucou"
     }
   },
   methods: {
@@ -51,4 +51,5 @@ export default {
   }
 }
 </script>
+
 
