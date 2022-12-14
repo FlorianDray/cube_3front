@@ -1,6 +1,7 @@
 <template>
   <div class="page-chatbot">
     <h1>{{ msg }}</h1>
+    <div class="chatbot-boxplus">
     <div class="chatbot-box">
       <div id="button-chatbox">
         <button type="button" class="button-open-chatbox"> <img class="chat-bar-icons-2"
@@ -17,11 +18,12 @@
             </div>
           </li>
         </ul>
-        <div class="text-zone">
-          <input type='text' class="chat-textbox" placeholder="Écrivez un message" v-model="inputUser">
-          <button @click="dialogEvolve()"><img src="../assets/images/envoyer_shoes.png" class="image-envoyer"></button>
+        <div class="button-zone">
+          <button @click="dialogEvolve()" class="userButton">Homme</button>
+          <button @click="dialogEvolve()" class="userButton">Femme</button>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>

@@ -1,62 +1,58 @@
 <template>
-<<<<<<< HEAD
-    <!-- mettre une iframe--> 
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/Test">ChatBot</router-link>
-  </nav>
-  <router-view/>
-=======
   <nav>
     <!-- <router-link to="/">chat</router-link> -->
   </nav>
   <router-view />
->>>>>>> ca62f9ffcbb46715dbb02e357c2a121568d172ac
 
 </template>
 
 <style>
-body {
-<<<<<<< HEAD
-  background-color: #222;;
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #ffffff;
 }
-.chat-bar-collapsible {
-position:fixed;
-display:grid;
-bottom: 0;
-right: 50px;
-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-=======
+
+nav {
+  padding: 30px;
+}
+
+body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(47, 47, 47);
->>>>>>> ca62f9ffcbb46715dbb02e357c2a121568d172ac
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+/* ------CHATBOT------ */
+
+.chatbot-boxplus {
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
 }
 
 .chatbot-box {
-  position: fixed;
-  display: grid;
-  right: 30px;
-  bottom: 0px;
+  position: relative;
+  animation: chatbot-window 5s 1 linear alternate running;
 }
-/* .chatbot-box:active {
-  animation: chatbot-window 0.5s ease-in forwards;
-} */
+
+/* ------BOUTON D'OUVERTURE------ */
 
 .button-open-chatbox {
-  position: absolute;
-  background: linear-gradient(90deg, rgba(35,119,255,1) 0%, rgba(53,104,255,1) 49%, rgba(0,157,189,1) 100%);
+  position: relative;
+  background: linear-gradient(90deg, rgba(35,95,255,1) 0%, rgba(45,161,245,1) 100%);
   width: 350px;
   height: 60px;
-  font-size: 18px;
-  bottom: 500px;
+  bottom: 0;
   right: 0;
-  outline: none;
   cursor: pointer;
   border-radius: 20px 20px 0px 0px;
   border: 3px solid white;
   border-bottom: none;
-  box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
 }
 
 #bot-text {
@@ -65,6 +61,7 @@ box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   padding: 15px;
   margin: 0;
   color: white;
+  font-size: 18px;
 }
 
 .button-open-chatbox img {
@@ -74,16 +71,18 @@ box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   float: left;
 }
 
+/* ------ZONE DES MESSAGES------ */
+
 .window-chatbot {
   background-color: white;
   max-height: 500px;
   width: 350px;
   height: 500px;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  bottom: 0;
-  right: 0;
+  bottom: 0px;
+  right: 0px;
   scroll-behavior: smooth;
 }
 
@@ -102,50 +101,44 @@ box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   margin: 0;
 }
 
-.text-zone {
+/* ------ZONE DES BOUTONS------ */
+
+.button-zone {
+  height: 80px;
   background-color: #e7e7e7;
   padding: 10px;
   border-left: 3px solid white;
   border-right: 3px solid white;
 }
 
-.window-chatbot button {
-  width: 30%;
-  height: 25px;
-  background: #e7e7e7;
-  border: 0;
+.userButton {     
+  box-shadow:inset 0px 1px 0px 0px #bbdaf7;     
+  background:linear-gradient(90deg, rgba(35,95,255,1) 0%, rgba(45,161,245,1) 100%);          
+  border-radius:6px;     
+  border:1px solid #84bbf3;     
+  cursor:pointer;     
+  color:#ffffff;         
+  font-size:15px;     
+  font-weight:bold;     
+  padding:20px 51px;
+} 
+  
+.userButton:hover {   
+  background: linear-gradient(90deg, rgb(25, 69, 190) 0%, rgb(33, 118, 179) 100%);  
+} 
+
+.userButton:active {     
+  position:relative;     
+  top:1px; 
 }
 
-.image-envoyer {
-  display: flex;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  width: 50px;
-  float: right;
-  margin-right: 20px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.chat-textbox {
-  display: flex;
-  float: left;
-  box-sizing: border-box;
-  justify-content: space-between;
-  width: 70%;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  padding: 10px;
-  border: 0;
-  outline: none;
-}
+/* ------MESSAGES USER/BOT------ */
 
 .user {
   margin: 2px;
   padding: 15px;
   color: white;
-  background: linear-gradient(90deg, rgba(35,119,255,1) 0%, rgba(53,104,255,1) 49%, rgba(0,157,189,1) 100%);    
+  background: linear-gradient(90deg, rgba(35,95,255,1) 0%, rgba(45,161,245,1) 100%);   
   width: 75%;
   float: right;
   margin-right: 10px;
@@ -177,34 +170,12 @@ box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   margin: 10px 0px 0px 0px;
 }
 
+/* ------ANIMATIONS------ */
+
 @keyframes chatbot-window {
-  from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-500px);
-    }
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  0% { top: 500px; }
+  90% { top : 500px; }
+	100% { top: 0px; }
 }
 
 @keyframes floatup {
