@@ -1,6 +1,7 @@
 <template>
   <div class="page-chatbot">
     <h1>{{ msg }}</h1>
+    <div class="chatbot-boxplus">
     <div class="chatbot-box">
       <div id="button-chatbox">
         <button type="button" class="button-open-chatbox"> <img class="chat-bar-icons-2"
@@ -17,11 +18,23 @@
             </div>
           </li>
         </ul>
-        <div class="text-zone">
-          <input type='text' class="chat-textbox" placeholder="Écrivez un message" v-model="inputUser">
-          <button @click="dialogEvolve()"><img src="../assets/images/envoyer_shoes.png" class="image-envoyer"></button>
+        <div class="button-zone">
+          <button @click="dialogUndefined()" class="userButton">Voir le catalogue</button>
+          <button @click="dialogUndefined()" class="userButton">FAQ</button>
+          <button @click="dialogUndefined()" class="userButton">Connexion</button>
+          <button @click="dialogUndefined()" class="userButton">Inscription</button>
+          
+          <button @click="dialogHomme()" class="userButton">Homme</button>
+          <button @click="dialogFemme()" class="userButton">Femme</button>
+
+          <!-- <button @click="dialogUndefined()" class="userButton">Basket Basses</button>
+          <button @click="dialogUndefined()" class="userButton">Basket Hautes</button>
+
+          <button @click="dialogUndefined()" class="userButton">Choisir une couleur</button>
+          <button @click="dialogUndefined()" class="userButton">Ne pas choisir de couleur </button>  -->
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -41,15 +54,22 @@ export default {
         user: 'bot',
         time: ""
       }],
-      selection: [],
-      inputUser: "Coucou"
+      inputUserU: "Bonjour",
+      inputUser1: "Homme",
+      inputUser2: "Femme"
     }
   },
   methods: {
-    dialogEvolve() {
-      this.dialog = converse(this.inputUser, this.dialog)
+    dialogUndefined() {
+      this.dialog = converse(this.inputUserU, this.dialog)
+    },
+    dialogHomme() {
+      this.dialog = converse(this.inputUser1, this.dialog)
+    },
+    dialogFemme() {
+      this.dialog = converse(this.inputUser2, this.dialog)
     }
-  }
+}
 }
 </script>
 
