@@ -36,9 +36,9 @@ export function converse(input, dialog) {
  */
 function chooseResponse(input) {
     switch (input) {
-        case 'marque':
+        case 'Homme':
             return getCategories('marque')
-        case 'type':
+        case 'Femme':
             return getCategories('type')
         case 'nom':
             return getCategories('nom')

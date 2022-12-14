@@ -19,8 +19,19 @@
           </li>
         </ul>
         <div class="button-zone">
-          <button @click="dialogEvolve()" class="userButton">Homme</button>
-          <button @click="dialogEvolve()" class="userButton">Femme</button>
+          <button @click="dialogUndefined()" class="userButton">Voir le catalogue</button>
+          <button @click="dialogUndefined()" class="userButton">FAQ</button>
+          <button @click="dialogUndefined()" class="userButton">Connexion</button>
+          <button @click="dialogUndefined()" class="userButton">Inscription</button>
+          
+          <button @click="dialogHomme()" class="userButton">Homme</button>
+          <button @click="dialogFemme()" class="userButton">Femme</button>
+
+          <!-- <button @click="dialogUndefined()" class="userButton">Basket Basses</button>
+          <button @click="dialogUndefined()" class="userButton">Basket Hautes</button>
+
+          <button @click="dialogUndefined()" class="userButton">Choisir une couleur</button>
+          <button @click="dialogUndefined()" class="userButton">Ne pas choisir de couleur </button>  -->
         </div>
       </div>
     </div>
@@ -43,14 +54,22 @@ export default {
         user: 'bot',
         time: ""
       }],
-      inputUser: "Coucou"
+      inputUserU: "Bonjour",
+      inputUser1: "Homme",
+      inputUser2: "Femme"
     }
   },
   methods: {
-    dialogEvolve() {
-      this.dialog = converse(this.inputUser, this.dialog)
+    dialogUndefined() {
+      this.dialog = converse(this.inputUserU, this.dialog)
+    },
+    dialogHomme() {
+      this.dialog = converse(this.inputUser1, this.dialog)
+    },
+    dialogFemme() {
+      this.dialog = converse(this.inputUser2, this.dialog)
     }
-  }
+}
 }
 </script>
 
