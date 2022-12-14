@@ -17,12 +17,15 @@ export function converse(input, dialog) {
             user: 'bot'
         })
     } else {
+        if (selection.length < 1 ){
+            selection = []
+        }
         dialog.push({
             msg: input,
             user: 'user'
         })
         dialog.push({
-            msg: chooseResponse(input),
+            msg: chooseResponse(input , selection),
             user: 'bot'
         })
     }
@@ -34,7 +37,7 @@ export function converse(input, dialog) {
  * @param {string} input  message utilisateur
  * @returns message du bot
  */
-function chooseResponse(input) {
+function chooseResponse(input , selection ) {
     switch (input) {
         case 'Homme':
             return getCategories('marque')
