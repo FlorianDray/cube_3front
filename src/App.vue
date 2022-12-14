@@ -1,15 +1,23 @@
 <template>
+<<<<<<< HEAD
     <!-- mettre une iframe--> 
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/Test">ChatBot</router-link>
   </nav>
   <router-view/>
+=======
+  <nav>
+    <!-- <router-link to="/">chat</router-link> -->
+  </nav>
+  <router-view />
+>>>>>>> ca62f9ffcbb46715dbb02e357c2a121568d172ac
 
 </template>
 
 <style>
 body {
+<<<<<<< HEAD
   background-color: #222;;
 }
 .chat-bar-collapsible {
@@ -18,160 +26,164 @@ display:grid;
 bottom: 0;
 right: 50px;
 box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+=======
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(47, 47, 47);
+>>>>>>> ca62f9ffcbb46715dbb02e357c2a121568d172ac
 }
 
-.collapsible {
-background-color: #0A7CFF;
-color: white;
-cursor: pointer;
-padding: 0px;
-width: 350px;
-text-align: center;
-outline: none;
-font-size: 18px;
-border-radius: 5px 5px 0px 0px;
-border: 3px solid white;
-border-bottom: none;
+.chatbot-box {
+  position: fixed;
+  display: grid;
+  right: 30px;
+  bottom: 0px;
 }
+/* .chatbot-box:active {
+  animation: chatbot-window 0.5s ease-in forwards;
+} */
 
-.content {
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.2s ease-out;
-background-color: #f1f1f1;
-}
-
-.full-chat-block {
-width: 350px;
-background: white;
-text-align: center;
-overflow: auto;
-scrollbar-width: none;
-height: max-content;
-transition: max-height 0.2s ease-out;
-}
-
-.outer-container {
-min-height: 500px;
-bottom: 0%;
-position: relative;
-}
-
-.chat-container {
-max-height: 500px;
-width: 100%;
-position: absolute;
-bottom: 0;
-left: 0;
-scroll-behavior: smooth;
-hyphens: auto;
-}
-
-.chat-container::-webkit-scrollbar {
-display: none;
-}
-
-.chat-bar-input-block {
-display: flex;
-float: left;
-box-sizing: border-box;
-justify-content: space-between;
-width: 100%;
-align-items: center;
-background-color: rgb(235, 235, 235);
-border-radius: 10px 10px 0px 0px;
-padding: 10px 0px 10px 10px;
-}
-
-.chat-bar-icons {
-display: flex;
-justify-content: space-evenly;
-box-sizing: border-box;
-width: 45%;
-float: right;
-font-size: 20px;
-}
-.chat-bar-icons:hover {
-transform: scale(1.05);
-}
-
-.chat-bar-icons-2 {
-justify-content: space-evenly;
-box-sizing: border-box;
-width: 18%;
-float: left;
+.button-open-chatbox {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(35,119,255,1) 0%, rgba(53,104,255,1) 49%, rgba(0,157,189,1) 100%);
+  width: 350px;
+  height: 60px;
+  font-size: 18px;
+  bottom: 500px;
+  right: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px 20px 0px 0px;
+  border: 3px solid white;
+  border-bottom: none;
+  box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
 }
 
 #bot-text {
-text-align: left;
-vertical-align: middle;
-padding: 21px;
-margin: 0;
-margin-left: 20px;
+  text-align: left;
+  vertical-align: middle;
+  padding: 15px;
+  margin: 0;
+  color: white;
 }
 
-#chat-icon:hover {
-opacity: .7;
+.button-open-chatbox img {
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 50px;
+  float: left;
 }
 
-/* Bulles de chat */
-
-#userInput {
-width: 75%;
+.window-chatbot {
+  background-color: white;
+  max-height: 500px;
+  width: 350px;
+  height: 500px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  right: 0;
+  scroll-behavior: smooth;
 }
 
-.input-box {
-float: left;
-border: none;
-box-sizing: border-box;
-width: 100%;
-border-radius: 10px;
-padding: 10px;
-font-size: 16px;
-color: #000;
-background-color: white;
-outline: none
+.scrollbar {
+  overflow: auto;
+  scrollbar-width: none;
+  height: max-content;
+  transition: max-height 0.2s ease-out;
+  height: 500px;
 }
 
-.userText {
-color: white;
-font-family: Helvetica;
-font-size: 16px;
-font-weight: normal;
-text-align: right;
-clear: both;
+.window-chatbot ul li {
+  list-style-type: none;
+  text-align: left;
+  padding:0;
+  margin: 0;
 }
 
-.userText span {
-line-height: 1.5em;
-display: inline-block;
-background: #5ca6fa;
-padding: 10px;
-border-radius: 8px;
-border-bottom-right-radius: 2px;
-max-width: 80%;
-margin-right: 10px;
-animation: floatup .5s forwards
+.text-zone {
+  background-color: #e7e7e7;
+  padding: 10px;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
 }
 
-.botText {
-color: #000;
-font-family: Helvetica;
-font-weight: normal;
-font-size: 16px;
-text-align: left;
+.window-chatbot button {
+  width: 30%;
+  height: 25px;
+  background: #e7e7e7;
+  border: 0;
 }
 
-.botText span {
-line-height: 1.5em;
-display: inline-block;
-background: #e0e0e0;
-padding: 10px;
-border-radius: 8px;
-border-bottom-left-radius: 2px;
-max-width: 80%;
-margin-left: 10px;
-animation: floatup .5s forwards
+.image-envoyer {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 50px;
+  float: right;
+  margin-right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chat-textbox {
+  display: flex;
+  float: left;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px;
+  border: 0;
+  outline: none;
+}
+
+.user {
+  margin: 2px;
+  padding: 15px;
+  color: white;
+  background: linear-gradient(90deg, rgba(35,119,255,1) 0%, rgba(53,104,255,1) 49%, rgba(0,157,189,1) 100%);    
+  width: 75%;
+  float: right;
+  margin-right: 10px;
+  border-radius: 10px 10px 0px 10px;
+  max-width: max-content;
+  animation: floatup .5s forwards
+}
+
+.bot {
+  margin: 2px;
+  padding: 15px;
+  color: rgb(0, 0, 0);
+  background: #e0e0e0;
+  width: 75%;
+  float: left;
+  margin-left: -30px;
+  border-radius: 10px 10px 10px 0px;
+  animation: floatup .5s forwards
+}
+
+.bot #time {
+  font-size: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.user #time {
+  font-size: 10px;
+  text-align: right;
+  margin: 10px 0px 0px 0px;
+}
+
+@keyframes chatbot-window {
+  from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-500px);
+    }
 }
 
 #app {
@@ -196,32 +208,15 @@ nav a.router-link-exact-active {
 }
 
 @keyframes floatup {
-from {
-    transform: translateY(14px);
-    opacity: .0;
-}
-to {
-    transform: translateY(0px);
-    opacity: 1;
-}
+    from {
+        transform: translateY(15px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
-@media screen and (max-width:600px) {
-.full-chat-block {
-    width: 100%;
-    border-radius: 0px;
-}
-.chat-bar-collapsible {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
-.collapsible {
-    width: 100%;
-    border: 0px;
-    border-top: 3px solid white;
-    border-radius: 0px;
-}
-}
 </style>
+
