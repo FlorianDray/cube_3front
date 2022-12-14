@@ -24,10 +24,10 @@
           <button @click="dialogUndefined()" class="userButton">Connexion</button>
           <button @click="dialogUndefined()" class="userButton">Inscription</button>
           
-          <button @click="dialogHomme()" class="userButton">Homme</button>
+          <!-- <button @click="dialogHomme()" class="userButton">Homme</button>
           <button @click="dialogFemme()" class="userButton">Femme</button>
 
-          <!-- <button @click="dialogUndefined()" class="userButton">Basket Basses</button>
+          <button @click="dialogUndefined()" class="userButton">Basket Basses</button>
           <button @click="dialogUndefined()" class="userButton">Basket Hautes</button>
 
           <button @click="dialogUndefined()" class="userButton">Choisir une couleur</button>

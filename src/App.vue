@@ -8,17 +8,13 @@
 
 <style>
 
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #ffffff;
-}
-
-nav {
-  padding: 0px;
-}
+} */
 
 body {
   margin: 0;
@@ -26,36 +22,70 @@ body {
   background: linear-gradient(90deg, rgba(35,95,255,1) 0%, rgba(45,161,245,1) 100%); 
   overflow: hidden;
 }
+
 /* ------FOND DU SITE------ */
 
 .menuPrincipal {
-  width: 100%;
-  height: 60px;
+  height: 80px;
   margin-bottom: 20px;
+  padding: 0 100px 0 100px;
   box-shadow: rgba(0, 0, 0, 0.493) 0px 10px 50px;
   background-color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  text-align: center;
 }
 
+.logoSite {
+  grid-column: 1;
+}
 .logoSneakMe {
-  width: 10%;
-  margin: 15px 40% 0 0;
+  width: 180px;
+  height: 30px;
+  margin: 0 0 0 0;
+  grid-column: 1;
 }
 
 .menuSite {
-  display: inline;
   color: black;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  grid-column: 2/5;
 }
-
 .menuSite li {
+  margin: 0 30px 0 0;
   display: inline-block;
-  margin: 0 20px 0 0;
+  font-size: 18px;
 }
 .menuSite li:hover {
-  font-weight: bold;
+  transform: scale(1.1);
   cursor: pointer;
+}
+
+.monCompte {
+  color: black;
+  grid-column: 5;
+  margin: 0;
+  align-items: center;
+}
+.monCompte p {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  
+}
+.monCompte img {
+  width: 40px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.textFond {
+  color: white;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 /* ------CHATBOT------ */
