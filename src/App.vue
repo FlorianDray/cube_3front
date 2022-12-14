@@ -1,36 +1,16 @@
 <template>
-<<<<<<< HEAD
-    <!-- mettre une iframe--> 
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/Test">ChatBot</router-link>
-  </nav>
-  <router-view/>
-=======
   <nav>
     <!-- <router-link to="/">chat</router-link> -->
   </nav>
   <router-view />
->>>>>>> ca62f9ffcbb46715dbb02e357c2a121568d172ac
 
 </template>
 
 <style>
 body {
-<<<<<<< HEAD
-  background-color: #222;;
-}
-.chat-bar-collapsible {
-position:fixed;
-display:grid;
-bottom: 0;
-right: 50px;
-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-=======
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(47, 47, 47);
->>>>>>> ca62f9ffcbb46715dbb02e357c2a121568d172ac
 }
 
 .chatbot-box {
@@ -57,6 +37,7 @@ box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   border: 3px solid white;
   border-bottom: none;
   box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+  animation-name: windowopen; 
 }
 
 #bot-text {
@@ -177,7 +158,7 @@ box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   margin: 10px 0px 0px 0px;
 }
 
-@keyframes chatbot-window {
+@keyframes windowopen {
   from {
         transform: translateY(0px);
     }

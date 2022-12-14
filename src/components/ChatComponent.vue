@@ -41,6 +41,7 @@ export default {
         user: 'bot',
         time: ""
       }],
+      selection: [],
       inputUser: "Coucou"
     }
   },
